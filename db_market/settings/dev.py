@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'xadmin',
 
 
     'user',
@@ -150,7 +151,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'user.user'
 
 REST_FRAMEWORK={
-    'EXCEPTION_HANDLER': 'luffyapi.utils.exceptions.common_exception_handler',
+    'EXCEPTION_HANDLER': 'db_market.utils.exceptions.common_exception_handler',
 }
 
 
@@ -183,8 +184,8 @@ LOGGING = {
             # 实际开发建议使用ERROR
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            # 日志位置,日志文件名,日志保存目录必须手动创建，注：这里的文件路径要注意BASE_DIR代表的是小luffyapi
-            'filename': os.path.join(os.path.dirname(BASE_DIR), "logs", "luffy.log"),
+            # 日志位置,日志文件名,日志保存目录必须手动创建，注：这里的文件路径要注意BASE_DIR代表的是小db_market
+            'filename': os.path.join(os.path.dirname(BASE_DIR), "logs", "db_market.log"),
             # 日志文件的最大值,这里我们设置300M
             'maxBytes': 300 * 1024 * 1024,
             # 日志文件的数量,设置最大日志数量为10
